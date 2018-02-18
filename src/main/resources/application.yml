@@ -1,4 +1,8 @@
-spring.boot.admin.client.url: http://localhost:8080
+spring.boot.admin.client.url: http://spring-boot-admin.cfapps.io
 management.security.enabled: false
 server.port: 8001
-logging.level.org.springframework.web: DEBUG
+#logging.level.org.springframework.web: DEBUG
+spring.boot.admin.client.instance.metadata.cf_application_guid: ${vcap.application.application_id:undefined}
+spring.boot.admin.client.instance.metadata.cf_instance_index: ${vcap.application.instance_index:undefined}
+spring.boot.admin.client.instance.service-base-url: http://${vcap.application.uris[0]:undefined}
+spring.boot.admin.client.instance.metadata.auto-deregistration: true
